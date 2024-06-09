@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  FaCheckSquare,
+  FaHome,
+  FaLeaf,
+  FaShieldAlt,
+  FaWineBottle,
+  FaWineGlass,
+} from "react-icons/fa";
 
 const About = () => {
   return (
@@ -33,7 +41,9 @@ const About = () => {
           <ul className="about-list">
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="home-outline"></ion-icon>
+                <span>
+                  <FaHome />
+                </span>
               </div>
 
               <p className="about-item-text">Smart Home Design</p>
@@ -41,7 +51,9 @@ const About = () => {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="leaf-outline"></ion-icon>
+                <span>
+                  <FaLeaf />
+                </span>
               </div>
 
               <p className="about-item-text">Beautiful Scene Around</p>
@@ -49,7 +61,9 @@ const About = () => {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="wine-outline"></ion-icon>
+                <span>
+                  <FaWineGlass />
+                </span>
               </div>
 
               <p className="about-item-text">Exceptional Lifestyle</p>
@@ -57,7 +71,9 @@ const About = () => {
 
             <li className="about-item">
               <div className="about-item-icon">
-                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                <span>
+                  <FaCheckSquare name="shield-checkmark-outline" />
+                </span>
               </div>
 
               <p className="about-item-text">Complete 24/7 Security</p>

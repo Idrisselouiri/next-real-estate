@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  FaBath,
+  FaBed,
+  FaCamera,
+  FaHeart,
+  FaPlusCircle,
+  FaSquare,
+} from "react-icons/fa";
+import { IoIosResize } from "react-icons/io";
+import { IoLocation } from "react-icons/io5";
 
 const Property = () => {
   return (
@@ -24,21 +34,13 @@ const Property = () => {
 
                 <div className="banner-actions">
                   <button className="banner-actions-btn">
-                    <ion-icon name="location"></ion-icon>
-
+                    <IoLocation />
                     <address>Belmont Gardens, Chicago</address>
                   </button>
 
                   <button className="banner-actions-btn">
-                    <ion-icon name="camera"></ion-icon>
-
+                    <FaCamera />
                     <span>4</span>
-                  </button>
-
-                  <button className="banner-actions-btn">
-                    <ion-icon name="film"></ion-icon>
-
-                    <span>2</span>
                   </button>
                 </div>
               </figure>
@@ -60,25 +62,25 @@ const Property = () => {
                 <ul className="card-list">
                   <li className="card-item">
                     <strong>3</strong>
-
-                    <ion-icon name="bed-outline"></ion-icon>
-
-                    <span>Bedrooms</span>
+                    <i>
+                      <FaBed />
+                    </i>
+                    <p>Bedrooms</p>
                   </li>
 
                   <li className="card-item">
                     <strong>2</strong>
-
-                    <ion-icon name="man-outline"></ion-icon>
-
+                    <i>
+                      <FaBath />
+                    </i>
                     <span>Bathrooms</span>
                   </li>
 
                   <li className="card-item">
                     <strong>3450</strong>
-
-                    <ion-icon name="square-outline"></ion-icon>
-
+                    <i>
+                      <FaSquare />
+                    </i>
                     <span>Square Ft</span>
                   </li>
                 </ul>
@@ -88,7 +90,7 @@ const Property = () => {
                 <div className="card-author">
                   <figure className="author-avatar">
                     <img
-                      src="https://github.com/codewithsadee/homeverse/blob/master/assets/images/property-2.jpg?raw=true"
+                      src="https://github.com/codewithsadee/homeverse/blob/master/assets/images/author.jpg?raw=true"
                       alt="William Seklo"
                       className="w-100"
                     />
@@ -105,15 +107,23 @@ const Property = () => {
 
                 <div className="card-footer-actions">
                   <button className="card-footer-actions-btn">
-                    <ion-icon name="resize-outline"></ion-icon>
+                    <i>
+                      <IoIosResize />
+                    </i>
                   </button>
 
                   <button className="card-footer-actions-btn">
                     <ion-icon name="heart-outline"></ion-icon>
+                    <i>
+                      <FaHeart />
+                    </i>
                   </button>
 
                   <button className="card-footer-actions-btn">
                     <ion-icon name="add-circle-outline"></ion-icon>
+                    <i>
+                      <FaPlusCircle />
+                    </i>
                   </button>
                 </div>
               </div>
@@ -135,21 +145,13 @@ const Property = () => {
 
                 <div className="banner-actions">
                   <button className="banner-actions-btn">
-                    <ion-icon name="location"></ion-icon>
-
+                    <IoLocation />
                     <address>Belmont Gardens, Chicago</address>
                   </button>
 
                   <button className="banner-actions-btn">
-                    <ion-icon name="camera"></ion-icon>
-
+                    <FaCamera />
                     <span>4</span>
-                  </button>
-
-                  <button className="banner-actions-btn">
-                    <ion-icon name="film"></ion-icon>
-
-                    <span>2</span>
                   </button>
                 </div>
               </figure>
@@ -171,25 +173,25 @@ const Property = () => {
                 <ul className="card-list">
                   <li className="card-item">
                     <strong>3</strong>
-
-                    <ion-icon name="bed-outline"></ion-icon>
-
+                    <i>
+                      <FaBed />
+                    </i>
                     <span>Bedrooms</span>
                   </li>
 
                   <li className="card-item">
                     <strong>2</strong>
-
-                    <ion-icon name="man-outline"></ion-icon>
-
+                    <i>
+                      <FaBath />
+                    </i>
                     <span>Bathrooms</span>
                   </li>
 
                   <li className="card-item">
                     <strong>3450</strong>
-
-                    <ion-icon name="square-outline"></ion-icon>
-
+                    <i>
+                      <FaSquare />
+                    </i>
                     <span>Square Ft</span>
                   </li>
                 </ul>
@@ -216,15 +218,22 @@ const Property = () => {
 
                 <div className="card-footer-actions">
                   <button className="card-footer-actions-btn">
-                    <ion-icon name="resize-outline"></ion-icon>
+                    <i>
+                      <IoIosResize />
+                    </i>
                   </button>
 
                   <button className="card-footer-actions-btn">
                     <ion-icon name="heart-outline"></ion-icon>
+                    <i>
+                      <FaHeart />
+                    </i>
                   </button>
 
                   <button className="card-footer-actions-btn">
-                    <ion-icon name="add-circle-outline"></ion-icon>
+                    <i>
+                      <FaPlusCircle />
+                    </i>
                   </button>
                 </div>
               </div>

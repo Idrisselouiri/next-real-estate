@@ -1,23 +1,39 @@
 import React from "react";
+import {
+  FaFacebook,
+  FaGithub,
+  FaHamburger,
+  FaInstagram,
+  FaLinkedinIn,
+  FaLocationArrow,
+  FaUser,
+} from "react-icons/fa";
+import { IoIosClose, IoMdMenu } from "react-icons/io";
+
+import { CiMail } from "react-icons/ci";
+
 const Header = () => {
   return (
     <header className="header" data-header>
-      <div className="styles.overlay" data-overlay></div>
+      <div className="overlay" data-overlay></div>
 
       <div className="header-top">
         <div className="container">
           <ul className="header-top-list">
             <li>
               <a href="mailto:info@homeverse.com" className="header-top-link">
-                <ion-icon name="mail-outline"></ion-icon>
-
-                <span>info@homeverse.com</span>
+                <i>
+                  <CiMail />
+                </i>
+                <p>info@homeverse.com</p>
               </a>
             </li>
 
             <li>
               <a href="#" className="header-top-link">
-                <ion-icon name="location-outline"></ion-icon>
+                <i>
+                  <FaLocationArrow />
+                </i>
                 <address>15/A, Nest Tower, NYC</address>
               </a>
             </li>
@@ -27,25 +43,25 @@ const Header = () => {
             <ul className="header-top-social-list">
               <li>
                 <a href="#" className="header-top-social-link">
-                  <ion-icon name="logo-facebook"></ion-icon>
+                  <FaFacebook />
                 </a>
               </li>
 
               <li>
                 <a href="#" className="header-top-social-link">
-                  <ion-icon name="logo-twitter"></ion-icon>
+                  <FaInstagram />
                 </a>
               </li>
 
               <li>
                 <a href="#" className="header-top-social-link">
-                  <ion-icon name="logo-instagram"></ion-icon>
+                  <FaLinkedinIn />
                 </a>
               </li>
 
               <li>
                 <a href="#" className="header-top-social-link">
-                  <ion-icon name="logo-pinterest"></ion-icon>
+                  <FaGithub />
                 </a>
               </li>
             </ul>
@@ -58,7 +74,10 @@ const Header = () => {
       <div className="header-bottom">
         <div className="container">
           <a href="#" className="logo">
-            <img src="./assets/images/logo.png" alt="Homeverse logo" />
+            <img
+              src="https://github.com/codewithsadee/homeverse/blob/master/assets/images/logo.png?raw=true"
+              alt="Homeverse logo"
+            />
           </a>
 
           <nav className="navbar" data-navbar>
@@ -72,7 +91,9 @@ const Header = () => {
                 data-nav-close-btn
                 aria-label="Close Menu"
               >
-                <ion-icon name="close-outline"></ion-icon>
+                <i>
+                  <IoIosClose />
+                </i>
               </button>
             </div>
 
@@ -118,22 +139,11 @@ const Header = () => {
           </nav>
 
           <div className="header-bottom-actions">
-            <button className="header-bottom-actions-btn" aria-label="Search">
-              <ion-icon name="search-outline"></ion-icon>
-
-              <span>Search</span>
-            </button>
-
             <button className="header-bottom-actions-btn" aria-label="Profile">
-              <ion-icon name="person-outline"></ion-icon>
-
+              <i>
+                <FaUser />
+              </i>
               <span>Profile</span>
-            </button>
-
-            <button className="header-bottom-actions-btn" aria-label="Cart">
-              <ion-icon name="cart-outline"></ion-icon>
-
-              <span>Cart</span>
             </button>
 
             <button
@@ -141,7 +151,9 @@ const Header = () => {
               data-nav-open-btn
               aria-label="Open Menu"
             >
-              <ion-icon name="menu-outline"></ion-icon>
+              <i>
+                <IoMdMenu />
+              </i>
 
               <span>Menu</span>
             </button>

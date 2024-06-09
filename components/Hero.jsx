@@ -1,4 +1,5 @@
 import React from "react";
+import { FaHome } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -6,8 +7,9 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <p className="hero-subtitle">
-            <ion-icon name="home"></ion-icon>
-
+            <i>
+              <FaHome />
+            </i>
             <span>Real Estate Agency</span>
           </p>
 

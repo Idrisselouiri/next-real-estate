@@ -1,4 +1,15 @@
 import React from "react";
+import {
+  IoCarSportOutline,
+  IoFitnessOutline,
+  IoShieldCheckmarkOutline,
+  IoLibraryOutline,
+  IoBedOutline,
+  IoHomeOutline,
+  IoFootballOutline,
+} from "react-icons/io5";
+import { MdOutlineWaterDrop } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Features = () => {
   return (
@@ -12,13 +23,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="car-sport-outline"></ion-icon>
+                <i>
+                  <IoCarSportOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Parking Space</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -26,13 +41,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="water-outline"></ion-icon>
+                <i>
+                  <MdOutlineWaterDrop />
+                </i>
               </div>
 
               <h3 className="card-title">Swimming Pool</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -41,12 +60,17 @@ const Features = () => {
             <a href="#" className="features-card">
               <div className="card-icon">
                 <ion-icon name="shield-checkmark-outline"></ion-icon>
+                <i>
+                  <IoShieldCheckmarkOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Private Security</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -54,13 +78,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="fitness-outline"></ion-icon>
+                <i>
+                  <IoFitnessOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Medical Center</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -68,13 +96,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="library-outline"></ion-icon>
+                <i>
+                  <IoLibraryOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Library Area</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -82,13 +114,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="bed-outline"></ion-icon>
+                <i>
+                  <IoBedOutline />
+                </i>
               </div>
 
               <h3 className="card-title">King Size Beds</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -96,13 +132,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="home-outline"></ion-icon>
+                <i>
+                  <IoHomeOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Smart Homes</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
@@ -110,13 +150,17 @@ const Features = () => {
           <li>
             <a href="#" className="features-card">
               <div className="card-icon">
-                <ion-icon name="football-outline"></ion-icon>
+                <i>
+                  <IoFootballOutline />
+                </i>
               </div>
 
               <h3 className="card-title">Kid’s Playland</h3>
 
               <div className="card-btn">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+                <i>
+                  <FaArrowRight />
+                </i>
               </div>
             </a>
           </li>
