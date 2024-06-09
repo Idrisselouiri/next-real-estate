@@ -1,9 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
 import { PiMapPinLight } from "react-icons/pi";
 import { LuPhone } from "react-icons/lu";
 import { CiMail } from "react-icons/ci";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+=======
+>>>>>>> origin/main
 
 const Footer = () => {
   return (
@@ -26,9 +29,13 @@ const Footer = () => {
             <ul className="contact-list">
               <li>
                 <a href="#" className="contact-link">
+<<<<<<< HEAD
                   <i>
                     <PiMapPinLight />
                   </i>
+=======
+                  <ion-icon name="location-outline"></ion-icon>
+>>>>>>> origin/main
 
                   <address>Brooklyn, New York, United States</address>
                 </a>
@@ -36,18 +43,27 @@ const Footer = () => {
 
               <li>
                 <a href="tel:+0123456789" className="contact-link">
+<<<<<<< HEAD
                   <i>
                     <LuPhone />
                   </i>
+=======
+                  <ion-icon name="call-outline"></ion-icon>
+
+>>>>>>> origin/main
                   <span>+0123-456789</span>
                 </a>
               </li>
 
               <li>
                 <a href="mailto:contact@homeverse.com" className="contact-link">
+<<<<<<< HEAD
                   <i>
                     <CiMail />
                   </i>
+=======
+                  <ion-icon name="mail-outline"></ion-icon>
+>>>>>>> origin/main
 
                   <span>contact@homeverse.com</span>
                 </a>
@@ -57,25 +73,41 @@ const Footer = () => {
             <ul className="social-list">
               <li>
                 <a href="#" className="social-link">
+<<<<<<< HEAD
                   <FaFacebook />
+=======
+                  <ion-icon name="logo-facebook"></ion-icon>
+>>>>>>> origin/main
                 </a>
               </li>
 
               <li>
                 <a href="#" className="social-link">
+<<<<<<< HEAD
                   <FaTwitter />
+=======
+                  <ion-icon name="logo-twitter"></ion-icon>
+>>>>>>> origin/main
                 </a>
               </li>
 
               <li>
                 <a href="#" className="social-link">
+<<<<<<< HEAD
                   <FaInstagram />
+=======
+                  <ion-icon name="logo-linkedin"></ion-icon>
+>>>>>>> origin/main
                 </a>
               </li>
 
               <li>
                 <a href="#" className="social-link">
+<<<<<<< HEAD
                   <FaLinkedin />
+=======
+                  <ion-icon name="logo-youtube"></ion-icon>
+>>>>>>> origin/main
                 </a>
               </li>
             </ul>
