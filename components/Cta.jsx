@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import { FaArrowRight } from "react-icons/fa6";
-=======
->>>>>>> origin/main
 
 const Cta = () => {
   return (
@@ -19,14 +16,9 @@ const Cta = () => {
 
           <button className="btn cta-btn">
             <span>Explore Properties</span>
-<<<<<<< HEAD
             <i>
               <FaArrowRight />
             </i>
-=======
-
-            <ion-icon name="arrow-forward-outline"></ion-icon>
->>>>>>> origin/main
           </button>
         </div>
       </div>

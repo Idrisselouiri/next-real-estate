@@ -1176,6 +1176,13 @@ form.sign-in-form {
   color: #aaa;
   font-weight: 500;
 }
+.solid{
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .social-text {
   padding: 0.7rem 0;

@@ -1,10 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-import { MdOutlinePerson } from "react-icons/md";
-import { IoIosPricetags } from "react-icons/io";
-import { CiCalendar } from "react-icons/ci";
-=======
->>>>>>> origin/main
 
 const Blog = () => {
   return (
@@ -30,28 +24,18 @@ const Blog = () => {
                   <ul className="card-meta-list">
                     <li>
                       <a href="#" className="card-meta-link">
-<<<<<<< HEAD
                         <i>
                           <MdOutlinePerson />
                         </i>
-=======
-                        <ion-icon name="person"></ion-icon>
-
->>>>>>> origin/main
                         <span>by: Admin</span>
                       </a>
                     </li>
 
                     <li>
                       <a href="#" className="card-meta-link">
-<<<<<<< HEAD
                         <i>
                           <IoIosPricetags />
                         </i>
-=======
-                        <ion-icon name="pricetags"></ion-icon>
-
->>>>>>> origin/main
                         <span>Interior</span>
                       </a>
                     </li>
@@ -64,14 +48,9 @@ const Blog = () => {
 
                 <div className="blog-content-bottom">
                   <div className="publish-date">
-<<<<<<< HEAD
                     <i>
                       <CiCalendar />
                     </i>
-=======
-                    <ion-icon name="calendar"></ion-icon>
-
->>>>>>> origin/main
                     <time datetime="2022-27-04">Apr 27, 2022</time>
                   </div>
 

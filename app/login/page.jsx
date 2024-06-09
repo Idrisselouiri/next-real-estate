@@ -15,13 +15,8 @@ const Signin = () => {
       <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i>
-                <FaUser />
-              </i>
-              <input type="text" placeholder="Username" />
-            </div>
+            <h2 class="title">Log in</h2>
+
             <div class="input-field">
               <i>
                 <FaVoicemail />
@@ -35,9 +30,9 @@ const Signin = () => {
               <input type="password" placeholder="Password" />
             </div>
             <button type="submit" class="btn solid">
-              Signin
+              Login
             </button>
-            <p class="social-text">Or Sign in with social platforms</p>
+            <p class="social-text">Or Log in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i>
@@ -73,7 +68,7 @@ const Signin = () => {
             </p>
 
             <button class="btn transparent" id="sign-up-btn">
-              Sign In
+              Log In
             </button>
           </div>
           <img
