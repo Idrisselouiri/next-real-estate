@@ -15,9 +15,12 @@ import { IoIosClose, IoMdMenu } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { User } from "./UserProfile";
 
 const Header = () => {
-  const { data: session } = useSession();
+  const session = useSession();
+  const { status } = session;
+  const { data: userData } = User();
   return (
     <header className="header" data-header>
       <div className="overlay" data-overlay></div>
@@ -144,20 +147,26 @@ const Header = () => {
           </nav>
 
           <div className="header-bottom-actions">
-            {session ? (
-              <Link href={"/profile"}>
-                <button aria-label="Profile">{session.user.name}</button>
+            {status === "authenticated" && (
+              <Link href={"/profile"} className="user-image-header">
+                <img src={userData.image} alt={userData.name} />
               </Link>
-            ) : (
-              <button
-                className="header-bottom-actions-btn"
-                aria-label="Profile"
-              >
-                <i>
-                  <FaUser />
-                </i>
-                <span>Profile</span>
-              </button>
+            )}
+            {status === "unauthenticated" && (
+              <div className="flex items-center gap-6">
+                <Link
+                  className="hover:text-slate-700 transition"
+                  href={"/login"}
+                >
+                  Log In
+                </Link>
+                <Link
+                  className="bg-slate-500 hover:bg-slate-700 text-white px-4 py-3 rounded-lg transition"
+                  href={"/signin"}
+                >
+                  Sign In
+                </Link>
+              </div>
             )}
 
             <button

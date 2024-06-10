@@ -15,7 +15,7 @@ const UserSchema = new Schema(
     image: {
       type: String,
       default:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Fblank-profile-picture-mystery-man-973460%2F&psig=AOvVaw1OXnvpfHVKEt2QD_aftrvC&ust=1716645764575000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLiFhfy5poYDFQAAAAAdAAAAABAE",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdO2DCDcfM7yDAtEo797CkSw_njibgz-lOgw&s",
     },
   },
   { timestamps: true }
