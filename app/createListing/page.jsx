@@ -7,11 +7,10 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { app } from "../firebase";
-import "react-circular-progressbar/dist/styles.css";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { UserProfile } from "@/components/UserProfile";
+import { app } from "../firebase";
 
 export default function CreateListing() {
   const { data: userData } = UserProfile();
@@ -31,6 +30,7 @@ export default function CreateListing() {
     parking: false,
     furnished: false,
   });
+  console.log(formData);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
@@ -93,7 +93,7 @@ export default function CreateListing() {
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
   };
-
+  console.log(formData);
   const handleChange = (e) => {
     if (e.target.id === "sale" || e.target.id === "rent") {
       setFormData({
@@ -150,7 +150,6 @@ export default function CreateListing() {
         }
         if (res.ok) {
           resolve();
-          router.push(`/listing/${data.slug}`);
         }
       } catch (error) {
         setError(error.message);
@@ -167,7 +166,7 @@ export default function CreateListing() {
   return (
     <main className="main-create-listing">
       <h1 className="title">Create a Listing</h1>
-      <form className="form-listing">
+      <form className="form-listing" onSubmit={handleSubmit}>
         <div className="container-input-listing input">
           <input
             type="text"
@@ -219,7 +218,7 @@ export default function CreateListing() {
               />
               <span>Parking spot</span>
             </div>
-            <div className="flex gap-2">
+            <div>
               <input
                 type="checkbox"
                 id="furnished"
@@ -228,7 +227,7 @@ export default function CreateListing() {
               />
               <span>Furnished</span>
             </div>
-            <div className="flex gap-2">
+            <div>
               <input
                 type="checkbox"
                 id="offer"
@@ -251,7 +250,7 @@ export default function CreateListing() {
               />
               <p>Beds</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div>
               <input
                 type="number"
                 id="bathrooms"
@@ -263,7 +262,7 @@ export default function CreateListing() {
               />
               <p>Baths</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div>
               <input
                 type="number"
                 id="regularPrice"
@@ -273,7 +272,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
-              <div className="flex flex-col items-center">
+              <div>
                 <p>Regular price</p>
                 {formData.type === "rent" && (
                   <span className="text-xs">($ / month)</span>
@@ -281,7 +280,7 @@ export default function CreateListing() {
               </div>
             </div>
             {formData.offer && (
-              <div className="flex items-center gap-2">
+              <div>
                 <input
                   type="number"
                   id="discountPrice"
@@ -328,10 +327,7 @@ export default function CreateListing() {
           </p>
           {formData.imageUrls.length > 0 &&
             formData.imageUrls.map((url, index) => (
-              <div
-                key={url}
-                className="flex justify-between p-3 border items-center"
-              >
+              <div key={url} className="image-uploaded">
                 <img
                   src={url}
                   alt="listing image"

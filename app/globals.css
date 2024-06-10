@@ -1419,6 +1419,11 @@ form.sign-in-form {
   border-radius: 5px;
   padding: 12px;
 }
+.container-input-listing textarea{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 12px;
+}
 .container-checkbox{
   display: flex;
   gap: 15px;
@@ -1465,6 +1470,7 @@ form.sign-in-form {
  font-weight: normal;
  color: black;
  margin-left: 5px;
+ margin: 10px 0;
 }
 .box-input-file{
   display: flex;
@@ -1489,7 +1495,24 @@ form.sign-in-form {
 .box-input-file button:disabled{
   opacity: 0.8;
 }
-
+.image-uploaded{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px 0;
+  align-items: center;
+}
+.image-uploaded img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.image-uploaded button{
+  color: red;
+}
 
 
 /*-----------------------------------*\
