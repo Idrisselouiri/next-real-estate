@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   FaFacebook,
@@ -11,8 +13,11 @@ import {
 import { IoIosClose, IoMdMenu } from "react-icons/io";
 
 import { CiMail } from "react-icons/ci";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 const Header = () => {
+  const { data: session } = useSession();
   return (
     <header className="header" data-header>
       <div className="overlay" data-overlay></div>
@@ -139,12 +144,21 @@ const Header = () => {
           </nav>
 
           <div className="header-bottom-actions">
-            <button className="header-bottom-actions-btn" aria-label="Profile">
-              <i>
-                <FaUser />
-              </i>
-              <span>Profile</span>
-            </button>
+            {session ? (
+              <Link href={"/profile"}>
+                <button aria-label="Profile">{session.user.name}</button>
+              </Link>
+            ) : (
+              <button
+                className="header-bottom-actions-btn"
+                aria-label="Profile"
+              >
+                <i>
+                  <FaUser />
+                </i>
+                <span>Profile</span>
+              </button>
+            )}
 
             <button
               class="header-bottom-actions-btn"

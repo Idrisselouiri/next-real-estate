@@ -91,10 +91,11 @@
     text-align: left;
     cursor: pointer;
   }
+
   
   address { font-style: normal; }
   
-  ion-icon { pointer-events: none; }
+  i { pointer-events: none; }
   
   html {
     font-family: var(--ff-nunito-sans);
@@ -197,6 +198,7 @@
     margin-inline: auto;
     margin-bottom: 15px;
   }
+  
   
   .section-title {
     text-align: var(--text-align, center);
@@ -1185,6 +1187,7 @@ form.sign-in-form {
   margin: 10px 0;
   gap: 10px;
 }
+
 .solid i{
   color: #000;
 }
@@ -1350,7 +1353,29 @@ form.sign-in-form {
   pointer-events: all;
 }
 
-
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 385px;
+}
+.profile-picture{
+  width: 100px;
+  height: 100px;
+  position:  relative; 
+  align-self: center;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-picture img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border: 1px solid black;
+  border-radius: 50%;
+}
 
 
 
