@@ -96,7 +96,7 @@ const Signin = () => {
             <button type="submit" class="btn solid">
               {loading ? (
                 <>
-                  <span className="pl-3">Loading...</span>
+                  <span>Loading...</span>
                 </>
               ) : (
                 "Sign In"
@@ -112,12 +112,7 @@ const Signin = () => {
               </i>
               Sign In With Google
             </button>
-            <Link href="/" className="text-sm font-normal text-[#060606]">
-              I have a account?{" "}
-              <span className="font-semibold underline underline-offset-2">
-                Sign Out
-              </span>{" "}
-            </Link>
+            <Link href="/">I have a account?</Link>
           </form>
         </div>
       </div>

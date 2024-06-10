@@ -82,7 +82,7 @@
   img,
   span,
   button,
-  ion-icon { display: block; }
+  i { display: block; }
   
   button {
     border: none;
@@ -1388,7 +1388,107 @@ form.sign-in-form {
   border-radius: 50%;
 }
 
+.main-create-listing{
+  padding: 12px;
+  max-width: 896px;
+  margin: 0 auto;
+}
+.main-create-listing .title{
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin: 28px 0;
 
+}
+.form-listing{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px 10px ;
+}
+
+.container-input-listing{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 0%;
+}
+.container-input-listing input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 12px;
+}
+.container-checkbox{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.container-checkbox div{
+  display: flex;
+  gap: 5px;
+}
+.container-checkbox input{
+  width: 30px;
+}
+.container-number-input{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.container-number-input div{
+  display: flex;
+  align-items:center;
+  gap: 5px;
+}
+
+.container-number-input input{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+
+.container-upload-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex: 1 1 0%;
+  margin: 0;
+}
+.container-upload-image p{
+ font-weight: 600;
+}
+.container-upload-image span{
+ font-weight: normal;
+ color: black;
+ margin-left: 5px;
+}
+.box-input-file{
+  display: flex;
+  gap: 6px;
+}
+.box-input-file input{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  
+}
+.box-input-file button{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.box-input-file button:hover{
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.box-input-file button:disabled{
+  opacity: 0.8;
+}
 
 
 
@@ -1415,6 +1515,7 @@ form.sign-in-form {
     --fs-2: 1.875rem;
 
   }
+
 
 
 
@@ -1475,7 +1576,10 @@ form.sign-in-form {
     gap: 20px;
   }
 
+  
 }
+
+
 
 
 
@@ -1625,10 +1729,14 @@ form.sign-in-form {
 
   .footer { margin-bottom: 0; }
 
+
+/** createListing**/
+
+.form-listing{
+  flex-direction: row;
 }
 
-
-
+}
 
 
 /**
@@ -1884,6 +1992,8 @@ form.sign-in-form {
   top: 5%;
   transform: translate(-50%, 0);
 }
+
+
  }
 /**
  * responsive for larger than 570px screen

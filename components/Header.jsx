@@ -15,12 +15,12 @@ import { IoIosClose, IoMdMenu } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { User } from "./UserProfile";
+import { UserProfile } from "./UserProfile";
 
 const Header = () => {
   const session = useSession();
   const { status } = session;
-  const { data: userData } = User();
+  const { data: userData } = UserProfile();
   return (
     <header className="header" data-header>
       <div className="overlay" data-overlay></div>
@@ -74,19 +74,21 @@ const Header = () => {
               </li>
             </ul>
 
-            <button className="header-top-btn">Add Listing</button>
+            <Link href={"createListing"} className="header-top-btn">
+              Add Listing
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="header-bottom">
         <div className="container">
-          <a href="#" className="logo">
+          <Link href="/" className="logo">
             <img
               src="https://github.com/codewithsadee/homeverse/blob/master/assets/images/logo.png?raw=true"
               alt="Homeverse logo"
             />
-          </a>
+          </Link>
 
           <nav className="navbar" data-navbar>
             <div className="navbar-top">

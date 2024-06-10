@@ -83,12 +83,7 @@ const Login = () => {
               </i>
               Sign In With Google
             </button>
-            <Link href="/" className="text-sm font-normal text-[#060606]">
-              I have a account?{" "}
-              <span className="font-semibold underline underline-offset-2">
-                Sign Out
-              </span>{" "}
-            </Link>
+            <Link href="/signin">I have a account?</Link>
           </form>
         </div>
       </div>
