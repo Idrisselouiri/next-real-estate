@@ -1,60 +1,94 @@
-import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLock,
-  FaTwitter,
-  FaUser,
-  FaVoicemail,
-} from "react-icons/fa";
+"use client";
 
-const Signin = () => {
+import React, { useState } from "react";
+import Link from "next/link";
+import toast from "react-hot-toast";
+import { signIn } from "next-auth/react";
+import { FaGoogle } from "react-icons/fa";
+import { FaLock, FaVoicemail } from "react-icons/fa";
+
+const Login = () => {
+  const [formData, setFormData] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      return setErrorMessage("Please fill out all fields.");
+    }
+    setLoading(true);
+    const savingPromise = new Promise(async (resolve, reject) => {
+      await signIn("credentials", {
+        email: formData.email,
+        password: formData.password,
+        callbackUrl: "/",
+      });
+      await toast.promise(savingPromise, {
+        loading: "Saving...",
+        success: "Login Successfully!",
+        error: "Error",
+      });
+      resolve();
+      setLoading(false);
+    });
+  };
   return (
     <div class="big-container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="#" class="sign-in-form" onSubmit={handleSubmit}>
             <h2 class="title">Log in</h2>
 
             <div class="input-field">
               <i>
                 <FaVoicemail />
               </i>
-              <input type="text" placeholder="Email" />
+              <input
+                type="text"
+                id="email"
+                onChange={handleChange}
+                placeholder="Email"
+              />
             </div>
             <div class="input-field">
               <i>
                 <FaLock />
               </i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                id="password"
+                onChange={handleChange}
+                placeholder="Password"
+              />
             </div>
             <button type="submit" class="btn solid">
-              Login
+              {loading ? (
+                <>
+                  <span className="pl-3">Loading...</span>
+                </>
+              ) : (
+                "Log In"
+              )}
             </button>
-            <p class="social-text">Or Log in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i>
-                  <FaFacebook />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter">
-                  <FaInstagram />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google">
-                  <FaTwitter />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in">
-                  <FaLinkedin />
-                </i>
-              </a>
-            </div>
+            <button
+              onClick={() => signIn("google", { callbackUrl: "/" })}
+              type="button"
+              class="btn solid"
+            >
+              <i>
+                <FaGoogle />
+              </i>
+              Sign In With Google
+            </button>
+            <Link href="/" className="text-sm font-normal text-[#060606]">
+              I have a account?{" "}
+              <span className="font-semibold underline underline-offset-2">
+                Sign Out
+              </span>{" "}
+            </Link>
           </form>
         </div>
       </div>
@@ -82,4 +116,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Login;

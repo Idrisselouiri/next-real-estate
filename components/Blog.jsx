@@ -1,4 +1,7 @@
 import React from "react";
+import { CiCalendar } from "react-icons/ci";
+import { IoIosPricetags } from "react-icons/io";
+import { MdOutlinePerson } from "react-icons/md";
 
 const Blog = () => {
   return (

@@ -1,65 +1,123 @@
-import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLock,
-  FaTwitter,
-  FaUser,
-  FaVoicemail,
-} from "react-icons/fa";
+"use client";
+
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
+import { signIn, signOut } from "next-auth/react";
+import Link from "next/link";
+import { FaLock, FaUser, FaVoicemail } from "react-icons/fa";
 
 const Signin = () => {
+  const [formData, setFormData] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  async function logout() {
+    await signOut();
+    router.push("/");
+  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+  };
+  console.log(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.password) {
+      return setErrorMessage("Please fill out all fields.");
+    }
+    const savingPromise = new Promise(async (resolve, reject) => {
+      try {
+        setLoading(true);
+        const res = await fetch("/api/auth/signin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        const data = await res.json();
+        if (data.success === false) {
+          reject();
+        }
+        setLoading(false);
+        if (res.ok) {
+          resolve();
+          router.push("/login");
+        }
+      } catch (error) {
+        reject();
+        setLoading(false);
+      }
+      await toast.promise(savingPromise, {
+        loading: "Saving...",
+        success: "Signin Successfully!",
+        error: "Error",
+      });
+    });
+  };
   return (
     <div class="big-container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="#" class="sign-in-form" onSubmit={handleSubmit}>
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i>
                 <FaUser />
               </i>
-              <input type="text" placeholder="Username" />
+              <input
+                onChange={handleChange}
+                type="text"
+                placeholder="Username"
+                id="name"
+              />
             </div>
             <div class="input-field">
               <i>
                 <FaVoicemail />
               </i>
-              <input type="text" placeholder="Email" />
+              <input
+                onChange={handleChange}
+                id="email"
+                type="email"
+                placeholder="Email"
+              />
             </div>
             <div class="input-field">
               <i>
                 <FaLock />
               </i>
-              <input type="password" placeholder="Password" />
+              <input
+                onChange={handleChange}
+                id="password"
+                type="password"
+                placeholder="Password"
+              />
             </div>
             <button type="submit" class="btn solid">
-              Signin
+              {loading ? (
+                <>
+                  <span className="pl-3">Loading...</span>
+                </>
+              ) : (
+                "Sign In"
+              )}
             </button>
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i>
-                  <FaFacebook />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter">
-                  <FaInstagram />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google">
-                  <FaTwitter />
-                </i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in">
-                  <FaLinkedin />
-                </i>
-              </a>
-            </div>
+            <button
+              onClick={() => signIn("google", { callbackUrl: "/" })}
+              type="button"
+              class="btn solid"
+            >
+              <i>
+                <FaGoogle />
+              </i>
+              Sign In With Google
+            </button>
+            <Link href="/" className="text-sm font-normal text-[#060606]">
+              I have a account?{" "}
+              <span className="font-semibold underline underline-offset-2">
+                Sign Out
+              </span>{" "}
+            </Link>
           </form>
         </div>
       </div>
